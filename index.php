@@ -1,5 +1,4 @@
 <?php
- 	include("templates/header.php");	
 	if (isset($_GET['args']) && $_GET['args'] != "") {
 		$args = explode( '/', $_GET['args']);
 		if (is_file('pages/' . $args[0] . '.php')) {
@@ -17,7 +16,5 @@
 		echo "test";
 		include('pages/home.php');
 	}
-	
-	include("templates/footer.php");
 	exit;
 ?>

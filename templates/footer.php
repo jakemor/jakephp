@@ -1,1 +1,1 @@
-FOOTER
+<div>FOOTER</div>
