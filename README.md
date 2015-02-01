@@ -65,7 +65,7 @@
 			echo "user creation failed";
 		}
 	} else {
-		echo "user exists""username", ; 
+		echo "user already exists", ; 
 	}
 
 3) C[R]UD:	show info from database
