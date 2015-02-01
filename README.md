@@ -12,8 +12,6 @@
 
 
 2. create pages + forms in /pages
-	
-	pages/login.php
 
 	<form action="home" method="post">
 		New Username: <input type="text" name="username"><br>
@@ -21,9 +19,6 @@
 		<input type="submit">
 	</form>
 
-
-	pages/home.php
-	
 	$user = new User();
 	$user->usename = $_POST["username"];
 	$user->password = $_POST["password"];
