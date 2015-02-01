@@ -1,10 +1,11 @@
-<?php include("templates/header.php");?>
+<?php include("templates/header.php"); ?>
 
 <?php
-for ($i=0; $i < sizeof($_GET); $i++) { 
-	echo "<p>" . $_GET[$i] . "<p>";
-	echo "<br>";
-}
+	
+	$person = new Person();
+	$person->username = "jake";
+	$person->print_class();
+
 ?>
 
 <a href="/jakephp/contactus"> contact us <a>

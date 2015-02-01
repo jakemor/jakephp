@@ -1,4 +1,5 @@
 <?php
+	require 'models.php';
 	if (isset($_GET['args']) && $_GET['args'] != "") {
 		$args = explode( '/', $_GET['args']);
 		if (is_file('pages/' . $args[0] . '.php')) {
@@ -13,8 +14,8 @@
 			include('pages/notfound.php');
 		}
 	} else {
-		echo "test";
 		include('pages/home.php');
 	}
+
 	exit;
 ?>
