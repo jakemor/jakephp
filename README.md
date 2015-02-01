@@ -2,7 +2,7 @@
 
 ## Goal: A lightweight, web framework for use at hackathons. 
 ### Implementation
-1) define models in models.php
+1. define models in models.php
 
 	class User extends ModelBuilder {
 		public $username;
@@ -10,4 +10,21 @@
 		public $createdAt;
 	}
 
-2) create pages + forms in /pages
+
+2. create pages + forms in /pages
+	
+	pages/login.php
+
+	<form action="home" method="post">
+		New Username: <input type="text" name="username"><br>
+		Password: <input type="password" name="password"><br>
+		<input type="submit">
+	</form>
+
+
+	pages/home.php
+	
+	$user = new User();
+	$user->usename = $_POST["username"];
+	$user->password = $_POST["password"];
+	$user->save();
