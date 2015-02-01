@@ -18,7 +18,7 @@
 		$user->password = "jakephp";
 		$user->create();
 
-	// $user->get() : populates $user with the first user found w/ the key,value pair provided 
+	// $user->get(key, value) : populates $user with the first user found w/ the key,value pair provided 
 	// returns TRUE or FALSE
 		$user->get("username", "jakemor"); 
 
@@ -35,7 +35,7 @@
 			$user->delete();
 		}
 
-	// $user->exists() : returns TRUE if a user exists with the key,value pair provided
+	// $user->exists(key, value) : returns TRUE if a user exists with the key,value pair provided
 	// returns TRUE or FALSE
 		if ($user->exists("username", "jakemor")) {
 			echo "user exists";
@@ -58,9 +58,9 @@
 	if (!$user->exists("username", $_POST["username"])) { 
 		$user->usename = $_POST["username"];
 		$user->password = $_POST["password"];
-		$user->cookie("username", time()+3600); // expire in 1 hour. 
 		if ($user->create()) {
-			echo "user created"; 
+			echo "user created";
+			setcookie("username", $_POST["username"], time()+3600);
 		} else {
 			echo "user creation failed";
 		}
@@ -89,9 +89,3 @@
 	if ($user->get("username", $_COOKIE["username"])) {
 		$user->delete(); 
 	}
-	
-
-
-
-
-
