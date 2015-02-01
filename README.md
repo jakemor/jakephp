@@ -12,13 +12,15 @@
 
 
 2) create pages + forms in /pages
-
+	
+	login.php
 	<form action="home" method="post">
 		New Username: <input type="text" name="username"><br>
 		Password: <input type="password" name="password"><br>
 		<input type="submit">
 	</form>
 
+	home.php
 	$user = new User();
 	$user->usename = $_POST["username"];
 	$user->password = $_POST["password"];
