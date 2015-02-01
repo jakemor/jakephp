@@ -11,17 +11,15 @@ class ModelBuilder {
 
 	public function save() {
 		foreach ($this as $key => $value) {
-			echo ("<br>" . $key . " = " . $value . "<br>");
+			echo ("<br>" . $key . " : " . $value . "<br>");
 		}
 	}
 
-	// create
+	// save() = saves the object in its database
 
-	// read
-	
-	// update
+	// get(key, value) = 
 
-	// delete
+	// delete(key, value)
 
 }
 

@@ -3,8 +3,8 @@
 <?php
 	
 	$person = new Person();
-	$person->username = "jake";
-	$person->print_class();
+		$person->username = "jake";
+	$person->save();
 
 ?>
 
