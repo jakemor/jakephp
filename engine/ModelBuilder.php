@@ -1,25 +1,87 @@
 <?php
 
 class ModelBuilder {
+
 	public function __construct() {
-		echo "<br>". get_class($this) . " = ";
-		$cols = array_keys(get_class_vars(get_class($this)));
-		foreach ($cols as $col) {
-			echo $col . ", ";
-		}
+		$db = new SQLite3('database.db');
+		$table_name = get_class($this);
+		$cols_array = array_keys(get_class_vars(get_class($this)));
+		$cols = implode(",", $cols_array);
+		$db->exec(
+			'CREATE TABLE ' . $table_name . '(' . $cols . ');'
+		);
 	}
 
-	public function save() {
+	// create()
+	public function create() {
+		$db = new SQLite3('database.db');
+		$table_name = get_class($this);
+		
+		$cols_array = array(); 
+		$vals_array = array(); 
+		
 		foreach ($this as $key => $value) {
-			echo ("<br>" . $key . " : " . $value . "<br>");
+			array_push($cols_array, $key); 
+			array_push($vals_array, $value); 
 		}
+
+		$cols = '"' . implode('", "', $cols_array) . '"';
+		$vals = "'" . implode("', '", $vals_array) . "'";
+		
+		$db->exec(
+			'CREATE TABLE ' . $table_name . '(' . $cols . ');'
+		);
+
+		$db->exec(
+			"INSERT INTO \"" . $table_name . "\" (" . $cols . ") VALUES (" . $vals . "); "
+  		);
 	}
 
-	// save() = saves the object in its database
+	// get(key, value)
+	public function get($key, $value) {
+		$db = new SQLite3('database.db');
+		$table_name = get_class($this);
 
-	// get(key, value) = 
+		$query = "SELECT * FROM \"" . $table_name . "\" WHERE \"" . $key . "\" = '" . $value . "'";
+		
+		$result = $db->query($query);
 
-	// delete(key, value)
+		$found = FALSE; 
+		
+		while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+			$found = TRUE; 
+		    foreach ($row as $key => $value) {
+		    	$this->$key = $value; 
+		    }
+		}
+
+		return $found; 
+	}
+
+	public function read($key, $value) {
+		$db = new SQLite3('database.db');
+		$table_name = get_class($this);
+
+		$query = "SELECT * FROM \"" . $table_name . "\" WHERE \"" . $key . "\" = '" . $value . "'";
+
+		$result = $db->query($query);
+		$return = array();
+
+		while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+		    $db_row = array(); 
+		    foreach ($row as $key => $value) {
+		    	$db_row[$key] = $value; 
+		    }
+		    array_push($return, $db_row); 
+		}
+
+		return $return; 
+	}
+
+
+	// update()
+
+	// delete()
 
 }
 

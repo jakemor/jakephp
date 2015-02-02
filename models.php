@@ -2,11 +2,9 @@
 
 require 'engine/ModelBuilder.php';
 
-class Person extends ModelBuilder {
-	public $username;
-	public $password;
-	public $createdAt;
+class Friends extends ModelBuilder {
+	public $user1;
+	public $user2; 
 }
-
 
 ?>
