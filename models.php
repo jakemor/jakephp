@@ -1,10 +1,10 @@
 <?php
 
-require 'engine/ModelBuilder.php';
+require 'model/ModelBuilder.php';
 
-class Friends extends ModelBuilder {
-	public $user1;
-	public $user2; 
+class User extends ModelBuilder {
+	public $username;
+	public $password; 
 }
 
 ?>

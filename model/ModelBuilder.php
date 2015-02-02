@@ -32,7 +32,7 @@ class ModelBuilder {
 			'CREATE TABLE ' . $table_name . '(' . $cols . ');'
 		);
 
-		$db->exec(
+		return $db->exec(
 			"INSERT INTO \"" . $table_name . "\" (" . $cols . ") VALUES (" . $vals . "); "
   		);
 	}
@@ -75,7 +75,13 @@ class ModelBuilder {
 		    array_push($return, $db_row); 
 		}
 
-		return $return; 
+		if (sizeof($return > 0)) {
+			return $return; 
+		} else {
+			return FALSE; 
+		}
+
+		
 	}
 
 
