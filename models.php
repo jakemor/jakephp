@@ -7,4 +7,9 @@ class User extends ModelBuilder {
 	public $password; 
 }
 
+class Friend extends ModelBuilder {
+	public $user1;
+	public $user2; 
+}
+
 ?>

@@ -1,5 +1,5 @@
-<?php include("templates/header.php");?>
+<?php include("header.php");?>
 
 <p>page not found</p>
 
-<?php include("templates/footer.php");?>
+<?php include("footer.php");?>

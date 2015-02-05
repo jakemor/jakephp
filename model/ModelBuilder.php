@@ -13,7 +13,7 @@ class ModelBuilder {
 	}
 
 	// create()
-	public function create() {
+	public function save() {
 		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 		
@@ -58,7 +58,7 @@ class ModelBuilder {
 		return $found; 
 	}
 
-	public function read($key, $value) {
+	public function filter($key, $value) {
 		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 

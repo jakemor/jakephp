@@ -1,5 +1,11 @@
 <?php
 	require 'models.php';
+	include 'settings.php'; 
+
+	if ($error_reporting) {
+		ini_set('display_errors',1);  error_reporting(E_ALL);
+	}
+
 	if (isset($_GET['args']) && $_GET['args'] != "") {
 		$args = explode( '/', $_GET['args']);
 		if (is_file('views/' . $args[0] . '.php')) {

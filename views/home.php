@@ -1,28 +1,25 @@
-<?php include("templates/header.php"); ?>
+<?php include("header.php"); ?>
 
 <?php
-	
-	$user = new User();
 
-	$results = $user->read("username", $_GET[0]);
-
-	if (sizeof($results) == 0) {
-		$user->username = $_GET[0]; 
-		$user->password = $_GET[1]; 
-		if ($user->create()) {
-			echo "<p>User Created</p>";
-		} else {
-			echo "<p>Error: User Not Created</p>";
-		}
-	} else {
-		echo "<p>User Exists!</p>";
-	}
-
+		$user = new User();
 		
-
+		if ($user->filter("username", $_GET[0])) {
+			if ($user->filter("username", $_GET[1])) {
+				$friend = new Friend(); 
+					$friend->user1 = $_GET[0]; 
+					$friend->user2 = $_GET[1];
+					$friend->save(); 
+				echo "<br>friended<br>"; 
+			} else {
+				echo "<br>no user 2<br>"; 
+			}
+		} else {
+			echo "<br>no user 1<br>"; 
+		}
 
 ?>
 
 <a href="/jakephp/contactus"> contact us <a>
 
-<?php include("templates/footer.php");?>
+<?php include("footer.php");?>
