@@ -12,7 +12,7 @@
 
 	// inherited methods:
 	
-	// $user->create() : creates an object of type User
+	// $user->save() : creates an object of type User
 	// returns TRUE or FALSE
 		$user->username = "jakemor"; 
 		$user->password = "jakephp";

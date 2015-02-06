@@ -1,6 +1,6 @@
 <?php
 
-require 'model/ModelBuilder.php';
+require 'jakephp/ModelBuilder.php';
 
 class User extends ModelBuilder {
 	public $username;
@@ -10,6 +10,7 @@ class User extends ModelBuilder {
 class Friend extends ModelBuilder {
 	public $user1;
 	public $user2; 
+	public $user3; 
 }
 
 ?>
