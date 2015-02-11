@@ -16,7 +16,7 @@
 	// returns TRUE or FALSE
 		$user->username = "jakemor"; 
 		$user->password = "jakephp";
-		$user->create();
+		$user->save();
 
 	// $user->get(key, value) : populates $user with the first user found w/ the key,value pair provided 
 	// returns TRUE or FALSE
@@ -35,12 +35,17 @@
 			$user->delete();
 		}
 
-	// $user->exists(key, value) : returns TRUE if a user exists with the key,value pair provided
+	// $user->search(key, value) : returns array of database rows matching search criteria
 	// returns TRUE or FALSE
-		if ($user->exists("username", "jakemor")) {
-			echo "user exists";
+		$results = $user->search("username", "jakemor"); 
+		if (is_array($results)) {
+			foreach ($results as $row) {
+				foreach ($row as $key => $value) {
+					echo "{$key} = {$value}"; 
+				}
+			}
 		} else {
-			echo "aint no user with those credentials";
+			echo "no results"; 
 		}
 
 
@@ -58,7 +63,7 @@
 	if (!$user->exists("username", $_POST["username"])) { 
 		$user->usename = $_POST["username"];
 		$user->password = $_POST["password"];
-		if ($user->create()) {
+		if ($user->save()) {
 			echo "user created";
 			setcookie("username", $_POST["username"], time()+3600);
 		} else {
