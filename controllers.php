@@ -1,20 +1,32 @@
 <?php
 
-// must include
+// optionally include some usefull functions
+include "jakephp/helpers.php";
+
+// Must include this function. You can change its name in settings.php
 function home() {
+	// CODE HERE
 
-	$friend = new Friend(); 
-	$friend->user1 = "lol"; 
-	$friend->user2 = "hi"; 
-	$friend->user3 = "ho"; 
-	$friend->save(); 
-
-	include("views/home.html"); 
+	include("views/home.php"); 
 }
 
-// must include
+// Must include this function. You can change its name in settings.php
 function notfound() {
-	include("views/notfound.html"); 
+	// CODE HERE
+
+	include("views/notfound.php"); 
+}
+
+/*  
+	FUNCTIONS
+	Note:	functions that begin with '_' are not expected to return pages, 
+			and are reserved for user defined functions. 
+	Ex: 	"_logUserIn()" or "_getPostsForUser($username)" 
+*/  
+
+// Useful for system wide announcments / debugging
+function _everypage() {
+
 }
 
 ?>

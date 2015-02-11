@@ -14,7 +14,7 @@
 
 	if (isset($_GET['args']) && $_GET['args'] != "") {
 		$args = explode( '/', $_GET['args']);
-		if (function_exists($args[0])) {
+		if (function_exists($args[0]) && "_" != substr($args[0], 0,1)) {
 			$controller = $args[0]; 
 			unset($args[0]);
 			if (sizeof($args) > 0) {
@@ -23,11 +23,14 @@
 				}
 			}
 			$_GET = array_values($args);
-			$controller(); 
+			_everypage();
+			$controller();
 		} else {
+			_everypage();
 			$notfound_view_controller(); 
 		}
 	} else {
+		_everypage();
 		$default_view_controller(); 
 	}
 	exit;

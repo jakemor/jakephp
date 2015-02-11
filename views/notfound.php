@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Page not found</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -33,8 +33,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-        <h4>Page not found</h4>
-        <p>This index.html page is a {{ placeholder }} with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+        <h1>Page not found</h1>
+        <p>Change the controller function that gets called when a page is not found in settings.php</p>
     </div>
   </div>
 

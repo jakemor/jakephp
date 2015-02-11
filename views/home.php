@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>JakePHP</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -29,12 +29,23 @@
 </head>
 <body>
 
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-        <h4>home page</h4>
-        <p>This index.html page is a {{ placeholder }} with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+        <h1>Home</h1>
+        <p>It Worked! Start building something awesome.</p>
+        <h2>Todos:</h2>
+          <ul>
+            <li>checkout [your-domain].com/admin (default password is admin)</li>
+            <li>edit controllers.php</li>
+            <li>add some models to models.php</li>
+            <li>make some views, put 'em in the views folder</li>
+            <li>point to views via controllers.php</li>
+            <li>fork on github</li>
+            <li>build the next facebook!!</li>
+          </ul>
     </div>
   </div>
 

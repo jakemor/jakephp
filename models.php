@@ -1,16 +1,19 @@
 <?php
 
-require 'jakephp/ModelBuilder.php';
+require 'jakephp/Model.php';
 
-class User extends ModelBuilder {
+/* 
+
+EXAMPLE: 
+
+class User extends Model {
+	public $email;
 	public $username;
 	public $password; 
+	public $createdAt; 
+	public $session_id; 
 }
 
-class Friend extends ModelBuilder {
-	public $user1;
-	public $user2; 
-	public $user3; 
-}
+*/
 
 ?>

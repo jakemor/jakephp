@@ -1,9 +1,11 @@
 <?php
 
-class ModelBuilder {
+// Only edit this if you know what your doing!
+
+class Model {
 
 	public function __construct() {
-		$db = new SQLite3('data.db');
+		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 		$cols_array = array_keys(get_class_vars(get_class($this)));
 		$cols = implode(",", $cols_array);
@@ -15,7 +17,7 @@ class ModelBuilder {
 
 	// create()
 	public function save() {
-		$db = new SQLite3('data.db');
+		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 		
 		if (!property_exists($this, "id")) {
@@ -44,19 +46,17 @@ class ModelBuilder {
 				if ($db->exec(
 					'UPDATE ' . $table_name . ' SET ' . $key . '="' . $value . '" WHERE id="' . $this->id . '";'
 				)) {
-					$updated = $updated + 1; 
+					$updated++; 
 				}
-				$rows = $rows + 1; 
+				$rows++; 
 			}
 			return $rows==$updated; 
 		}
-
-
 	}
 
 	// get(key, value)
 	public function get($key, $value) {
-		$db = new SQLite3('data.db');
+		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 
 		$query = "SELECT * FROM \"" . $table_name . "\" WHERE \"" . $key . "\" = '" . $value . "'";
@@ -75,8 +75,9 @@ class ModelBuilder {
 		return $found; 
 	}
 
-	public function filter($key, $value) {
-		$db = new SQLite3('data.db');
+	// returns an array
+	public function search($key, $value) {
+		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 
 		$query = "SELECT * FROM \"" . $table_name . "\" WHERE \"" . $key . "\" = '" . $value . "'";
@@ -97,14 +98,12 @@ class ModelBuilder {
 		} else {
 			return FALSE; 
 		}
-
-		
 	}
 
 	// delete()
 	public function delete() {
 		if (property_exists($this, "id")) {
-			$db = new SQLite3('data.db');
+			$db = new SQLite3('database.db');
 			$table_name = get_class($this);
 			$query = 'DELETE FROM "' . $table_name . '" WHERE ("id" = ' . $this->id . ');'; 
 			return $db->exec($query); 
@@ -112,7 +111,6 @@ class ModelBuilder {
 			return FALSE; 
 		}
 	}
-
 }
 
 ?>
