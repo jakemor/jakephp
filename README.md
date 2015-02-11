@@ -52,7 +52,7 @@
     </form>
 ```
 
-4. see domain.com/admin (password admin), you hould see your newly added users! use the following methods to perform basic crud operations.
+4. see domain.com/admin (password admin), you hould see your newly added users! use the following methods to perform basic crud operations. See jakephp/Model.php if you don't understand how one works.
 ```
 	$user = new User()
 		$user->search(string $key, string $value) returns array with search results
