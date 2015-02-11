@@ -22,11 +22,11 @@
 	// returns TRUE or FALSE
 		$user->get("username", "jakemor"); 
 
-	// $user->update() : updates the database with new fields
+	// $user->save() : updates the database with new fields
 	// returns TRUE or FALSE
 		if ($user->get("username", "jakemor")) {
 			$user->password = "newpass";
-			$user->update();
+			$user->save();
 		}
 	
 	// $user->delete() : deletes $user from the databse
@@ -85,7 +85,7 @@
 	$user = new User();
 	if ($user->get("username", $_COOKIE["username"])) {
 		$user->password = $_POST["new_pass"];
-		$user->update(); 
+		$user->save(); 
 	}
 
 5) CRU[D]:	delete from database
