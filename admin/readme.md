@@ -1,5 +1,9 @@
 # phpLiteAdmin
 
+## Note
+
+-   this version of phpLiteAdmin has been modified for use with JakePHP
+
 ## Requirements
 
 -   a server with PHP >= 5.2.0 installed
