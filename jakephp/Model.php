@@ -6,6 +6,7 @@ class Model {
 
 	public function __construct() {
 		$db = new SQLite3('database.db');
+		chmod("database.db", 0777);
 		$table_name = get_class($this);
 		$cols_array = array_keys(get_class_vars(get_class($this)));
 		$cols = implode(",", $cols_array);

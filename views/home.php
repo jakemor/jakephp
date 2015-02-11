@@ -43,9 +43,10 @@
             <li>add some models to models.php</li>
             <li>make some views, put 'em in the views folder</li>
             <li>point to views via controllers.php</li>
-            <li>fork on github</li>
+            <li>fork / star on <a href="https://github.com/jakemor/jakephp">github</a></li>
             <li>build the next facebook!!</li>
           </ul>
+        <p>Built with ❤️ by <a href="https://jakemor.com">Jake Mor</a></p>
     </div>
   </div>
 
