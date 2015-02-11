@@ -10,7 +10,7 @@
 - if you run into reading/writing errors, run "chmod 777 /your/project/directory" from the terminal
 
 ### Things to keep in mind:
-- url structure: domain.com/<view-controller-function>/$args[0]/$args[1]/$args[2]...
+- url structure: domain.com/view-controller-function/$args[0]/$args[1]/$args[2]...
 - access the $args variable from functions defined in controllers.php
 - add helper functions to helpers.php (functions in controllers.php that begin with "_" are not recognized as pages). I've added a few already.
 - _everypage() in controllers.php is called before every page call, useful for showing debuging info on top of every page. remove the function calls in index.php to remove this feature if you like.
