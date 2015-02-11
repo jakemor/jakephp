@@ -60,6 +60,7 @@
 		$user->save(string $key, string $value) saves/updates a new object in the database
 		$user->delete() use after $user->get to delete an object from database
 ```
+5. create a static folder at root level to add css, images, etc
 
-5. Contact me for questions, I'll answer every email :) www.jakemor.com
+6. Contact me for questions, I'll answer every email :) www.jakemor.com
 
