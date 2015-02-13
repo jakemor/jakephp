@@ -1,7 +1,7 @@
 <?php
 
 // optionally include some usefull functions
-include "helpers.php";
+include "jakephp/helpers.php";
 
 // Must include this function. You can change its name in settings.php
 function home() {
