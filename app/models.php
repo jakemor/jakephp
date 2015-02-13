@@ -1,6 +1,6 @@
 <?php
 
-require 'jakephp/Model.php';
+require './jakephp/Model.php';
 
 /* 
 

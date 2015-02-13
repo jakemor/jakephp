@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 
+  <?php require '././settings.php'; ?>
+
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>JakePHP</title>
+  <title><?php echo $project_name; ?></title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -17,10 +19,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS
+  <!-- CSS ( jakephp only supports direct paths to static files at the moment :p )
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="/jakephp/app/views/static/normalize.css">
+  <link rel="stylesheet" href="/jakephp/app/views/static/skeleton.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -32,11 +34,11 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <div class="container" style="margin-top:10%;">
     <div class="row">
-        <h1>Home</h1>
+        <h4>HOME</h4>
         <p>It Worked! Start building something awesome.</p>
-        <h2>Todos:</h2>
+        <h5>TODOS:</h5>
           <ul>
             <li>checkout [your-domain].com/admin (default password is admin)</li>
             <li>edit controllers.php</li>

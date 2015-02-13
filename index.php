@@ -9,8 +9,8 @@
 
 	// only experts edit below
 
-	require 'models.php';
-	require 'controllers.php';
+	require 'app/models.php';
+	require 'app/controllers.php';
 
 	if (isset($_GET['args']) && $_GET['args'] != "") {
 		$args = explode( '/', $_GET['args']);
