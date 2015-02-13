@@ -1,7 +1,7 @@
 <?php
 
 /*
-	HELPER FUNCTIONS - Add as you code
+	HELPER FUNCTIONS - Add as you need
 */
 
 function _print($string) {

@@ -6,7 +6,7 @@ include "jakephp/helpers.php";
 // Must include this function. You can change its name in settings.php
 function home() {
 	// CODE HERE
-
+	
 	include("views/home.php"); 
 }
 

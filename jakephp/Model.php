@@ -94,11 +94,28 @@ class Model {
 		    array_push($return, $db_row); 
 		}
 
-		if (sizeof($return > 0)) {
-			return $return; 
-		} else {
-			return FALSE; 
+		return $return; 
+	}
+
+	// returns an array
+	public function getAll() {
+		$db = new SQLite3('database.db');
+		$table_name = get_class($this);
+
+		$query = "SELECT * FROM \"" . $table_name . "\"";
+
+		$result = $db->query($query);
+		$return = array();
+
+		while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+		    $db_row = array(); 
+		    foreach ($row as $key => $value) {
+		    	$db_row[$key] = $value; 
+		    }
+		    array_push($return, $db_row); 
 		}
+
+		return $return; 
 	}
 
 	// delete()
