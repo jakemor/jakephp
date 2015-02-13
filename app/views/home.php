@@ -35,20 +35,32 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container" style="margin-top:10%;">
-    <div class="row">
+    <div class="row" style="text-align:center;">
+      <div class="twelve columns">
         <h4>HOME</h4>
-        <p>It Worked! Start building something awesome.</p>
-        <h5>TODOS:</h5>
-          <ul>
-            <li>checkout [your-domain].com/admin (default password is admin)</li>
-            <li>edit controllers.php</li>
-            <li>add some models to models.php</li>
-            <li>make some views, put 'em in the views folder</li>
-            <li>point to views via controllers.php</li>
-            <li>fork / star on <a href="https://github.com/jakemor/jakephp">github</a></li>
-            <li>build the next facebook!!</li>
-          </ul>
+        <p>It Worked! Next steps:</p>
+      </div>
+    </div>
+    <ul>
+    <div class="row" style="text-align:right; list-style-type: none;">
+      <div class="five columns offset-by-one">
+          <li>Add some models to models.php</li>
+          <li>Edit controllers.php</li>
+          <li>Make some views, put 'em in the views folder</li>
+          <li>Point to views via controllers.php</li>
+      </div>
+      <div class="five columns" style="text-align:left;">
+          <li>Checkout /admin (default password is admin)</li>
+          <li><em>Fork</em> this project on <a href="https://github.com/jakemor/jakephp">github</a></li>
+          <li><em>Star</em> this project on <a href="https://github.com/jakemor/jakephp">github</a></li>
+          <li>Build the next facebook!!</li>
+      </div>
+    </div>
+    </ul>
+    <div class="row" style="text-align:center;">
+      <div class="twelve columns">
         <p>Built with ❤️ by <a href="https://jakemor.com">Jake Mor</a></p>
+      </div>
     </div>
   </div>
 
