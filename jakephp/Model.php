@@ -145,20 +145,19 @@ class Model {
 		return $return; 
 	}
 
+
 	// returns an array
-	public function getMultiple($array) {
+	public function getMultiple($key, $values) {
 		$db = new SQLite3('database.db');
 		$table_name = get_class($this);
 
 		$query_array = array();  
 
-		foreach ($array as $key => $values) {
-			foreach ($values as $value) {
-				array_push($query_array,  "\"" . $key . "\" = '" . $value . "'"); 
-			}
+		foreach ($values as $value) {
+			array_push($query_array,  "\"" . $key . "\" = '" . $value . "'"); 
 		}
 
-		$query = "SELECT * FROM \"" . $table_name . "\" WHERE " . implode(" AND ", $query_array);
+		$query = "SELECT * FROM \"" . $table_name . "\" WHERE " . implode(" OR ", $query_array);
 
 		$result = $db->query($query);
 		$return = array();
