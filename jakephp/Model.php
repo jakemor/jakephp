@@ -152,11 +152,13 @@ class Model {
 
 		$query_array = array();  
 
-		foreach ($array as $key => $value) {
-			array_push($query_array,  "\"" . $key . "\" = '" . $value . "'"); 
+		foreach ($array as $key => $values) {
+			foreach ($values as $value) {
+				array_push($query_array,  "\"" . $key . "\" = '" . $value . "'"); 
+			}
 		}
 
-		$query = "SELECT * FROM \"" . $table_name . "\" WHERE " . implode(" OR ", $query_array);
+		$query = "SELECT * FROM \"" . $table_name . "\" WHERE " . implode(" AND ", $query_array);
 
 		$result = $db->query($query);
 		$return = array();
